@@ -7,6 +7,7 @@ export SENTRY_ENVIRONMENT=${PLUGIN_ENVIRONMENT}
 export SENTRY_RELEASE=${DRONE_COMMIT_SHA}
 
 git clone https://${PLUGIN_REPO_USER}:{$PLUGIN_REPO_TOKEN}@github.com/${PLUGIN_REPO_USER}/${PLUGIN_REPO_NAME}.git && cd ${DRONE_REPO_NAME}
+git remote set-url origin https://${PLUGIN_REPO_USER}:{$PLUGIN_REPO_TOKEN}@github.com/${PLUGIN_REPO_USER}/${PLUGIN_REPO_NAME}.git
 git checkout ${DRONE_SOURCE_BRANCH}
 echo "Creando release ${SENTRY_RELEASE}"
 sentry-cli releases new -p $SENTRY_PROJECT $SENTRY_RELEASE
