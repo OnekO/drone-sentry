@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 export SENTRY_AUTH_TOKEN=${PLUGIN_AUTH_TOKEN}
 export SENTRY_ORG=${PLUGIN_ORGANIZATION}
